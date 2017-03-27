@@ -14,6 +14,7 @@ class MainActivity : Activity() {
 
         val webview = findViewById(R.id.webview) as WebView
         webview.setWebViewClient(WebViewClient())
+        webview.addJavascriptInterface(NativeJsInterface(this), "native")
         val websettings = webview.settings
         websettings.javaScriptEnabled = true
         webview.loadUrl("file:///android_asset/home.html")
